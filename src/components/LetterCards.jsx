@@ -2,7 +2,7 @@ import Anime, { anime } from "react-anime";
 
 const LetterCards = ({ showEnvelope, showPhotos }) => {
   // String to display in the grid
-  const stringToDisplay: string[] = [
+  const stringToDisplay = [
     "H",
     "e",
     "l",
