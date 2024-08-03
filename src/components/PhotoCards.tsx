@@ -64,7 +64,7 @@ const PhotoCards = ({ showEnvelope, showPhotos }) => {
         className="w-72 h-72 bg-white border drop-shadow-md flex justify-center items-center"
       >
         <img
-          src={`src/assets/gfphotos/${photoURL}`}
+          src={`/assets/gfphotos/${photoURL}`}
           alt={`Photo ${index + 1}`}
           className="w-full h-full object-cover"
         />

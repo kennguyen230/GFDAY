@@ -4,6 +4,9 @@ import LetterCards from "./LetterCards";
 import PhotoCards from "./PhotoCards";
 import CouponCard from "./CouponCard";
 
+import cheeto from "../assets/animals/ginger3.png";
+import ski from "../assets/animals/calico.webp";
+
 const PhotoGallery = ({ showEnvelope }) => {
   const [showPhotos, setShowPhotos] = useState(false);
   const [showCoupon, setShowCoupon] = useState(false);
@@ -20,11 +23,7 @@ const PhotoGallery = ({ showEnvelope }) => {
               onClick={() => setShowPhotos(!showPhotos)}
               className="m-0 p-0"
             >
-              <img
-                src="\src\assets\animals\ginger3.png"
-                alt="calico"
-                className="w-40 md:w-96 mt-10"
-              />
+              <img src={cheeto} alt="cheeto" className="w-40 md:w-96 mt-10" />
             </button>
           </div>
         </AttentionSeeker>
@@ -38,11 +37,7 @@ const PhotoGallery = ({ showEnvelope }) => {
       {!showEnvelope && (
         <AttentionSeeker effect="bounce">
           <button onClick={() => setShowCoupon(!showCoupon)}>
-            <img
-              src="\src\assets\animals\calico.webp"
-              alt="calico"
-              className="w-36 mb-10 md:w-80"
-            />
+            <img src={ski} alt="ski" className="w-36 mb-10 md:w-80" />
           </button>
         </AttentionSeeker>
       )}

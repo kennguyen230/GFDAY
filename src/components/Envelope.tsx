@@ -1,4 +1,6 @@
 import { AttentionSeeker } from "react-awesome-reveal";
+import envelope from "../assets/envelope.png";
+
 const Envelope = ({ showEnvelope, setShowEnvelope }) => {
   return (
     <>
@@ -9,11 +11,7 @@ const Envelope = ({ showEnvelope, setShowEnvelope }) => {
           </AttentionSeeker>
           <AttentionSeeker effect="swing">
             <button onClick={() => setShowEnvelope(!showEnvelope)}>
-              <img
-                src=".\src\assets\envelope.png"
-                alt="envelope"
-                className="m-0 p-0"
-              />
+              <img src={envelope} alt="envelope" className="m-0 p-0" />
             </button>
           </AttentionSeeker>
         </div>
