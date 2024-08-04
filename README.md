@@ -1,5 +1,5 @@
 # GF DAY!
 
-## A little website for my girlfrand for National GF day
+A little website for my girlfrand for National GF day
 
-## Check it out here: https://gfday-pi.vercel.app/
+Check it out here: https://gfday-pi.vercel.app/
