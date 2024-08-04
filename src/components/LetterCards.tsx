@@ -1,4 +1,4 @@
-import Anime, { anime } from "react-anime";
+import Anime from "react-anime";
 
 const LetterCards = ({ showEnvelope, showPhotos }) => {
   // String to display in the grid
@@ -20,7 +20,7 @@ const LetterCards = ({ showEnvelope, showPhotos }) => {
     "m",
   ];
 
-  // Populates each cell of the grid with a letter in the string
+  // Creates the letter cards to populate the grid
   const strList = stringToDisplay.map((letter, index) => (
     <Anime
       easing="easeOutElastic"
@@ -38,10 +38,11 @@ const LetterCards = ({ showEnvelope, showPhotos }) => {
       </div>
     </Anime>
   ));
+
   return (
     <>
       {!showEnvelope && !showPhotos && (
-        <div className="grid grid-cols-5 grid-rows-3 gap-1 my-3 md:grid-cols-5 md:grid-rows-3 md:gap-x-7 md:gap-y-7">
+        <div className="grid grid-cols-5 grid-rows-3 gap-1 my-3 md:grid-cols-5 md:grid-rows-3 md:gap-x-4 md:gap-y-4">
           {strList}
         </div>
       )}

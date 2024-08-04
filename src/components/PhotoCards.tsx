@@ -34,7 +34,9 @@ import img30 from "../assets/gfphotos/img30.jpg";
 import img31 from "../assets/gfphotos/img31.jpg";
 
 const PhotoCards = ({ showEnvelope, showPhotos }) => {
-  // File name of each gf photo
+  // Array to keep track of each photo. When revisiting in
+  // the future, perhaps think of a better way to hold all
+  // the images
   const photoURLs = [
     img1,
     img2,
@@ -66,47 +68,50 @@ const PhotoCards = ({ showEnvelope, showPhotos }) => {
     img28,
     img29,
     img30,
-    img21,
+    img31,
   ];
 
-  // Used to grab 15 random photos from 'gf photo'
+  // Manages the list of photos to display after clicking
+  // on Cheeto
   const [photosList, setPhotosList] = useState([]);
 
+  // Upon showPhotos being set to true, grab 15 random
+  // photos from the backlog and set them to the list
+  // used for rendering
   useEffect(() => {
     if (showPhotos) {
       setPhotosList(getRandomPhotos(15));
     }
   }, [showPhotos]);
 
-  // The random generator of photos
+  // Used to randomly pick 15 photos
   const getRandomPhotos = (num) => {
     const shuffled = [...photoURLs].sort(() => 0.5 - Math.random());
     return shuffled.slice(0, num);
   };
 
+  // Creates a photocard with animation that gets populated
+  // in the grid. 'photos' in the list of divs that gets
+  // rendered
   const photos = photosList.map((photoURL, index) => (
-    <Anime
-      easing="easeOutElastic"
-      duration={1000}
-      scale={[0.5, 0.9]}
-      delay={index * 400}
-    >
-      <div
+    <Anime easing="easeOutElastic" scale={[0.5, 0.9]} delay={index * 300}>
+      <figure
         key={index}
-        className="w-72 h-72 bg-white border drop-shadow-md flex justify-center items-center"
+        className="w-72 h-72 bg-[#1D0200] border-2 drop-shadow-lg flex justify-center items-center"
       >
         <img
           src={photoURL}
           alt={`Photo ${index + 1}`}
           className="w-full h-full object-cover"
         />
-      </div>
+      </figure>
     </Anime>
   ));
+
   return (
     <>
       {!showEnvelope && showPhotos && (
-        <div className="h-full grid grid-cols-1 gap-1 my-3 md:grid-cols-5 md:grid-rows-3 md:gap-x-7 md:gap-y-7">
+        <div className="h-full grid grid-cols-1 gap-1 my-3 md:grid-cols-5 md:grid-rows-3 md:gap-x-4 md:gap-y-4">
           {photos}
         </div>
       )}
