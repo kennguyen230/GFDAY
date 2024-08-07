@@ -97,7 +97,7 @@ const PhotoCards = ({ showEnvelope, showPhotos }) => {
     <Anime easing="easeOutElastic" scale={[0.5, 0.9]} delay={index * 300}>
       <figure
         key={index}
-        className="w-72 h-72 bg-[#1D0200] border-2 drop-shadow-lg flex justify-center items-center"
+        className="w-72 h-72 bg-white border-2 drop-shadow-lg flex justify-center items-center"
       >
         <img
           src={photoURL}
